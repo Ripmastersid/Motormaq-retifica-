@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Retífica Predileta Motores e Cabeçotes • OS 1914</title>
 <link rel="icon" href="favicon-maq.png">
-<!-- 🔽 BANNER WHATSAPP: após o deploy, troque o link abaixo pelo SEU url.vercel.app/banner.png -->
 <meta property="og:type" content="article">
 <meta property="og:title" content="Retífica Predileta Motores e Cabeçotes • OS 1914">
 <meta property="og:description" content="Resumo do serviço — Ford Fiesta 1.0 • Placa KWT5F24 • Saldo: R$ 500,00">
@@ -100,7 +99,7 @@ function crc16(s){let c=0xFFFF;for(let i=0;i<s.length;i++){c^=s.charCodeAt(i)<<8
 var payload = tlv("00","01")
  + tlv("26", tlv("00","br.gov.bcb.pix") + tlv("01","21997321287"))
  + tlv("52","0000") + tlv("53","986") + tlv("54","500.00") + tlv("58","BR")
- + tlv("59","ISAIAS DOS SANTOS PETERSEN".slice(0,25))
+ + tlv("59","ISAIAS D. SANTOS PETERSEN")
  + tlv("60","SAO GONCALO")
  + tlv("62", tlv("05","OS1914")) + "6304";
 payload += crc16(payload);
