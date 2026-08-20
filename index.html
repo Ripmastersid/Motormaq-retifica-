@@ -84,7 +84,7 @@ footer{padding:16px 22px;font-size:12px;color:#7a828a;text-align:center}
     <div class="recado">Olá, Sr. Gustavo! Tudo bem? 🙂 Este é o resumo do serviço de reparo e troca da polia do comando de válvulas do seu Ford Fiesta 1.0 (placa KWT5F24). Para facilitar, deixamos o Pix com QR Code e o copia-e-cola acima, e este documento pode ser salvo em PDF. Qualquer dúvida, é só chamar no (21) 98687-9856. Obrigado pela confiança de sempre! 🔧</div>
   </section>
 
-  <footer>Retífica Predileta Motores e Cabeçotes • OS 1914 • Documento gerado em 19/08/2026</footer>
+  <footer>Retífica Predileta Motores e Cabeçotes • OS 1914 • Documento gerado em 20/08/2026</footer>
 </div>
 
 <div class="botoes no-print">
@@ -97,11 +97,12 @@ footer{padding:16px 22px;font-size:12px;color:#7a828a;text-align:center}
 function tlv(id,v){return id+String(v.length).padStart(2,"0")+v;}
 function crc16(s){let c=0xFFFF;for(let i=0;i<s.length;i++){c^=s.charCodeAt(i)<<8;for(let b=0;b<8;b++){c=(c&0x8000)?((c<<1)^0x1021)&0xFFFF:(c<<1)&0xFFFF;}}return c.toString(16).toUpperCase().padStart(4,"0");}
 var payload = tlv("00","01")
- + tlv("26", tlv("00","br.gov.bcb.pix") + tlv("01","21997321287"))
+ + tlv("01","11")
+ + tlv("26", tlv("00","br.gov.bcb.pix") + tlv("01","+5521997321287"))
  + tlv("52","0000") + tlv("53","986") + tlv("54","500.00") + tlv("58","BR")
- + tlv("59","ISAIAS DOS SANTOS PETERSEN".slice(0,25))
+ + tlv("59","ISAIAS DOS SANTOS")
  + tlv("60","SAO GONCALO")
- + tlv("62", tlv("05","OS1914")) + "6304";
+ + tlv("62", tlv("05","***")) + "6304";
 payload += crc16(payload);
 new QRCode(document.getElementById("qr"),{text:payload,width:210,height:210,correctLevel:QRCode.CorrectLevel.M});
 function copiarPix(){
